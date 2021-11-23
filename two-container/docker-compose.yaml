@@ -21,11 +21,11 @@ services:
       DNS1: 192.168.1.6
       DNS2: 192.168.1.13
     volumes:
-      - /volume1/docker/pihole-unbound/pihole/volume:/etc/pihole:rw
-      - /volume1/docker/pihole-unbound/pihole/config/hosts:/etc/hosts:ro
-      - /volume1/docker/pihole-unbound/pihole/config/resolv.conf:/etc/resolv.conf:ro
-      - /volume1/docker/pihole-unbound/pihole/config/dnsmasq.conf:/etc/dnsmasq.d/02-network.conf:ro
-      - /volume1/docker/pihole-unbound/pihole/config/pihole-FTL.conf:/etc/pihole/pihole-FTL.conf:ro
+      - /volume2/docker/pihole-unbound/pihole/volume:/etc/pihole:rw
+      - /volume2/docker/pihole-unbound/pihole/config/hosts:/etc/hosts:ro
+      - /volume2/docker/pihole-unbound/pihole/config/resolv.conf:/etc/resolv.conf:ro
+      - /volume2/docker/pihole-unbound/pihole/config/dnsmasq.conf:/etc/dnsmasq.d/02-network.conf:ro
+      - /volume2/docker/pihole-unbound/pihole/config/pihole-FTL.conf:/etc/pihole/pihole-FTL.conf:ro
     networks:
       home:
         ipv4_address: 192.168.1.5
@@ -47,7 +47,7 @@ networks:
   home:
     driver: macvlan
     driver_opts:
-      parent: ovs_eth1
+      parent: ovs_eth0
     ipam:
       config:
         - subnet: 192.168.1.0/24
