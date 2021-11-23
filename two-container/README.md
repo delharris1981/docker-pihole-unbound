@@ -115,7 +115,7 @@ If all looks good, configure your router/DHCP server to serve your new Pi-Hole I
 When updated container images are released you can execute these commands on your Docker host to pull them in and run them
 
 ```bash
-cd /volume1/docker/pihole-unbound
+cd /volume2/docker/pihole-unbound
 sudo docker-compose pull
 sudo docker-compose down
 sudo docker-compose up -d
